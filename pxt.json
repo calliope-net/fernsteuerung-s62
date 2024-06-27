@@ -1,0 +1,27 @@
+{
+    "name": "fernsteuerung-s61",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "v1": "*",
+        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.2.51",
+        "radio": "*",
+        "storage": "github:calliope-edu/pxt-storage#a34aec53d1c15fe4d8dbdb96737b3bf059260565"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "6.0.37",
+        "targetId": "calliopemini"
+    },
+    "supportedTargets": [
+        "calliopemini"
+    ],
+    "preferredEditor": "blocksprj"
+}
