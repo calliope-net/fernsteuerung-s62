@@ -10,7 +10,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 })
 let bM0 = false
 sender.beimStart(169)
-storage.putNumber(StorageSlots.s1, radio.getFunkgruppe(0))
+storage.putNumber(StorageSlots.s1, radio.setFunkgruppeButton(radio.eFunkgruppeButton.anzeigen))
 bM0 = true
 loops.everyInterval(400, function () {
     basic.setLedColor(0x00ff00)
