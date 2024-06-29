@@ -1,12 +1,11 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    radio.comment(sender.setServoButton(sender.eServoButton.links))
+	
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     bM0 = !(bM0)
-    radio.comment(sender.setServoButton(sender.eServoButton.gerade))
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    radio.comment(sender.setServoButton(sender.eServoButton.rechts))
+	
 })
 let bM0 = false
 sender.beimStart(storage.getNumber(StorageSlots.s1))
@@ -20,7 +19,6 @@ loops.everyInterval(400, function () {
             sender.sendM0(radio.radio_sendBuffer19())
         } else {
             sender.sendM01(radio.radio_sendBuffer19(), 60)
-            radio.setByte(radio.radio_sendBuffer19(), radio.eBufferPointer.m0, radio.eBufferOffset.b1_Servo, sender.setServoButton(sender.eServoButton.lesen))
         }
         radio.sendData(radio.radio_sendBuffer19())
         radio.zeige5x5Buffer(radio.radio_sendBuffer19())
