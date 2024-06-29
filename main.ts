@@ -9,8 +9,8 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     radio.comment(sender.setServoButton(sender.eServoButton.rechts))
 })
 let bM0 = false
-sender.beimStart(169)
-storage.putNumber(StorageSlots.s1, radio.setFunkgruppeButton(radio.eFunkgruppeButton.anzeigen))
+sender.beimStart(storage.getNumber(StorageSlots.s1))
+storage.putNumber(StorageSlots.s1, sender.storageBufferGet())
 bM0 = true
 loops.everyInterval(400, function () {
     basic.setLedColor(0x00ff00)
