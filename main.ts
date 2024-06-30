@@ -9,7 +9,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 })
 let bM0 = false
 sender.beimStart(storage.getNumber(StorageSlots.s1))
-storage.putNumber(StorageSlots.s1, sender.storageBufferGet())
+storage.putNumber(StorageSlots.s1, radio.storageBufferGet())
 bM0 = true
 loops.everyInterval(400, function () {
     basic.setLedColor(0x00ff00)
