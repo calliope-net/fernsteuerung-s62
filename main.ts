@@ -24,7 +24,7 @@ loops.everyInterval(400, function () {
         radio.zeige5x5Buffer(radio.radio_sendBuffer19())
         radio.zeige5x5Joystick(radio.radio_sendBuffer19())
     } else {
-        radio.zeigeBIN(1092, radio.ePlot.hex, 4)
+        radio.zeigeBIN(68, radio.ePlot.hex, 4)
     }
     basic.turnRgbLedOff()
 })
