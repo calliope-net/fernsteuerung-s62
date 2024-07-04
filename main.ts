@@ -12,7 +12,7 @@ sender.beimStart(
 true,
 storage.getNumber(StorageSlots.s1)
 )
-storage.putNumber(StorageSlots.s1, radio.storageBufferGet())
+storage.putNumber(StorageSlots.s1, sender.storageBufferGet())
 bM0 = true
 loops.everyInterval(400, function () {
     basic.setLedColor(0x00ff00)
