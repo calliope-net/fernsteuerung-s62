@@ -1,33 +1,118 @@
-input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-	
-})
-input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
-    bM0 = !(bM0)
-})
-input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-	
-})
-let bM0 = false
-sender.beimStart(
-true,
-storage.getNumber(StorageSlots.s1)
-)
-storage.putNumber(StorageSlots.s1, sender.storageBufferGet())
-bM0 = true
-loops.everyInterval(400, function () {
-    basic.setLedColor(0x00ff00)
-    if (sender.joystickQwiic()) {
-        radio.fill_sendBuffer19()
-        if (bM0) {
-            sender.sendM0(radio.radio_sendBuffer19())
-        } else {
-            sender.sendM01(radio.radio_sendBuffer19(), 60)
-        }
-        radio.sendData(radio.radio_sendBuffer19())
-        radio.zeige5x5Buffer(radio.radio_sendBuffer19())
-        radio.zeige5x5Joystick(radio.radio_sendBuffer19())
-    } else {
-        radio.zeigeBIN(68, radio.ePlot.hex, 4)
+function modell_Callibot () {
+    if (sender.isFunktion(sender.eFunktion.m0_s0)) {
+        sender.send00M0Joystick(
+        btf.btf_sendBuffer19(),
+        sender.sender_xmotor(),
+        sender.sender_servo16(),
+        sender.sender_ButtonA_Switch(),
+        btf.e3Abstand.u2
+        )
+        btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
+    } else if (sender.isFunktion(sender.eFunktion.mc_md_callibot_beispiele)) {
+        sender.send10Spurfolger(
+        btf.btf_sendBuffer19(),
+        192,
+        160,
+        31,
+        0,
+        sender.sender_ButtonA_Switch(),
+        btf.e3Abstand.u2
+        )
+        btf.comment(btf.btf_text("MC dauerhaft Schleife"))
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
+    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan) && sender.sender_ButtonA_Switch()) {
+        sender.send20Strecken(
+        btf.btf_sendBuffer19(),
+        sender.sender_Strecke(192, 31, 30),
+        sender.sender_Strecke(64, 31, 30),
+        sender.sender_Strecke(255, 16, 20),
+        sender.sender_Strecke(192, 1, 115),
+        sender.sender_Strecke(1, 16, 20)
+        )
+        btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
+    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan) && sender.sender_ButtonB_Switch()) {
+        sender.send2x2Motoren(
+        btf.btf_sendBuffer19(),
+        sender.sender_2MotorenEncoder(240, 240, 30, 30),
+        sender.sender_2MotorenEncoder(160, 96, 216, 216, 1, true),
+        8
+        )
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.ma, true)
+    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan)) {
+        btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
     }
-    basic.turnRgbLedOff()
+    btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
+}
+function modell_MKC_Kran () {
+    if (sender.isFunktion(sender.eFunktion.m0_s0)) {
+        sender.send00M0Joystick(
+        btf.btf_sendBuffer19(),
+        sender.sender_xmotor(),
+        sender.sender_servo16(),
+        false,
+        btf.e3Abstand.u3
+        )
+    } else if (sender.isFunktion(sender.eFunktion.ma_mb)) {
+        sender.send00MABKran(btf.btf_sendBuffer19(), sender.sender_xmotor(), sender.sender_ymotor())
+    } else if (sender.isFunktion(sender.eFunktion.mc_mb)) {
+        sender.send00MCBKran(btf.btf_sendBuffer19(), sender.sender_xmotor(), sender.sender_ymotor())
+    }
+    btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
+    btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b1, sender.sender_ButtonA_Switch())
+}
+function modell_MKC () {
+    if (sender.isFunktion(sender.eFunktion.m0_s0)) {
+        sender.send00M0Joystick(
+        btf.btf_sendBuffer19(),
+        sender.sender_xmotor(),
+        sender.sender_servo16(),
+        sender.sender_ButtonA_Switch(),
+        btf.e3Abstand.u3
+        )
+        btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
+    } else if (sender.isFunktion(sender.eFunktion.m0_m1_s0)) {
+        sender.send00M01Gabelstapler(
+        btf.btf_sendBuffer19(),
+        sender.sender_xmotor(),
+        sender.sender_ButtonAB_Counter(),
+        sender.sender_ymotor(),
+        false,
+        btf.e3Abstand.u2
+        )
+    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan) && sender.sender_ButtonA_Switch()) {
+        sender.send20Strecken(
+        btf.btf_sendBuffer19(),
+        sender.sender_Strecke(192, 31, 30),
+        sender.sender_Strecke(64, 31, 30),
+        sender.sender_Strecke(255, 16, 20),
+        sender.sender_Strecke(220, 4, 160),
+        sender.sender_Strecke(1, 16, 20)
+        )
+        btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
+    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan)) {
+        btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
+    }
+    btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
+}
+sender.beimStart()
+loops.everyInterval(400, function () {
+    if (sender.isFunktion(sender.eFunktion.ng) && sender.joystickQwiic()) {
+        basic.setLedColor(0x007fff)
+        btf.fill_sendBuffer19()
+        if (sender.isModell(sender.eModell.cb2e)) {
+            modell_Callibot()
+        } else if (sender.isModell(sender.eModell.mkcg)) {
+            modell_MKC()
+        } else if (sender.isModell(sender.eModell.mkck)) {
+            btf.comment(sender.multiswitchGrove(true))
+            modell_MKC_Kran()
+        }
+        btf.sendData(btf.btf_sendBuffer19())
+        btf.zeige5x5Buffer(btf.btf_sendBuffer19())
+        btf.zeige5x5Joystick(btf.btf_sendBuffer19())
+        basic.turnRgbLedOff()
+    }
 })
