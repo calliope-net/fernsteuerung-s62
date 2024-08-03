@@ -8,7 +8,7 @@ function modell_Callibot () {
         btf.e3Abstand.u2
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion.mc_md_callibot_beispiele)) {
+    } else if (sender.isFunktion(sender.eFunktion._10fernstarten)) {
         sender.send10Spurfolger(
         btf.btf_sendBuffer19(),
         192,
@@ -21,7 +21,7 @@ function modell_Callibot () {
         btf.comment(btf.btf_text("MC dauerhaft Schleife"))
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan) && sender.sender_ButtonA_Switch()) {
+    } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
         sender.sender_Strecke(192, 31, 30),
@@ -32,7 +32,7 @@ function modell_Callibot () {
         )
         btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
-    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan) && sender.sender_ButtonB_Switch()) {
+    } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonB_Switch()) {
         sender.send2x2Motoren(
         btf.btf_sendBuffer19(),
         sender.sender_2MotorenEncoder(240, 240, 30, 30),
@@ -40,7 +40,7 @@ function modell_Callibot () {
         8
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.ma, true)
-    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan)) {
+    } else if (sender.isFunktion(sender.eFunktion._20fahrplan)) {
         btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
@@ -96,7 +96,7 @@ function modell_MKC () {
         false,
         btf.e3Abstand.u2
         )
-    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan) && sender.sender_ButtonA_Switch()) {
+    } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
         sender.sender_Strecke(192, 31, 30),
@@ -107,7 +107,7 @@ function modell_MKC () {
         )
         btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
-    } else if (sender.isFunktion(sender.eFunktion.m1abcd_fahrplan)) {
+    } else if (sender.isFunktion(sender.eFunktion._20fahrplan)) {
         btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
