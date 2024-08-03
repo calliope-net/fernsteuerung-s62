@@ -22,7 +22,7 @@
     "supportedTargets": [
         "calliopemini"
     ],
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
     "yotta": {
         "config": {
             "microbit-dal": {
