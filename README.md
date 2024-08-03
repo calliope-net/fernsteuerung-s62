@@ -1,5 +1,5 @@
 
-> Diese Seite bei [https://calliope-net.github.io/fernsteuerung-s61/](https://calliope-net.github.io/fernsteuerung-s61/) öffnen
+> Diese Seite bei [https://calliope-net.github.io/fernsteuerung-s62/](https://calliope-net.github.io/fernsteuerung-s62/) öffnen
 
 ## Als Erweiterung verwenden
 
@@ -8,7 +8,7 @@ Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 * öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
 * klicke auf **Neues Projekt**
 * klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/calliope-net/fernsteuerung-s61** suchen und importieren
+* nach **https://github.com/calliope-net/fernsteuerung-s62** suchen und importieren
 
 ## Dieses Projekt bearbeiten
 
@@ -16,7 +16,7 @@ Um dieses Repository in MakeCode zu bearbeiten.
 
 * öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
 * klicke auf **Importieren** und dann auf **Importiere URL**
-* füge **https://github.com/calliope-net/fernsteuerung-s61** ein und klicke auf Importieren
+* füge **https://github.com/calliope-net/fernsteuerung-s62** ein und klicke auf Importieren
 
 #### Metadaten (verwendet für Suche, Rendering)
 
