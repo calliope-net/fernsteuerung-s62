@@ -1,11 +1,11 @@
 {
-    "name": "fernsteuerung-s61",
+    "name": "fernsteuerung-s62",
     "version": "0.1.1",
     "description": "",
     "dependencies": {
         "core": "*",
-        "v1": "*",
-        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.14.3"
+        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.14.3",
+        "v2": "*"
     },
     "files": [
         "main.blocks",
@@ -22,5 +22,15 @@
     "supportedTargets": [
         "calliopemini"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "pairing_mode": 1,
+                    "partial_flashing": 0
+                }
+            }
+        }
+    }
 }
