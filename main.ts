@@ -27,7 +27,8 @@ function modell_Callibot () {
         sender.sender_Strecke(64, 31, 30),
         sender.sender_Strecke(255, 16, 20),
         sender.sender_Strecke(192, 1, 115),
-        sender.sender_Strecke(1, 16, 20)
+        sender.sender_Strecke(1, 16, 20),
+        1
         )
         btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
@@ -127,7 +128,8 @@ function modell_MKC_Sensoren () {
         sender.sender_Strecke(64, 29, 40),
         sender.sender_Strecke(255, 16, 20),
         sender.sender_Strecke(220, 3, 153),
-        sender.sender_Strecke(1, 16, 20)
+        sender.sender_Strecke(1, 16, 20),
+        1
         )
         btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
