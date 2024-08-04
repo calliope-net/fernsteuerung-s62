@@ -1,6 +1,6 @@
 {
     "name": "fernsteuerung-s62",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "description": "",
     "dependencies": {
         "core": "*",
