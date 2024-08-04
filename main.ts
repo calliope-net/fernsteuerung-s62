@@ -58,11 +58,9 @@ function modell_MKC_Gabelstapler () {
     } else if (sender.isFunktion(sender.eFunktion.m0_m1_s0)) {
         sender.send00M01Gabelstapler(
         btf.btf_sendBuffer19(),
-        sender.sender_xmotor(),
+        sender.sender_motorProzent(sender.sender_xmotor(), 50),
         sender.sender_ButtonAB_Counter(),
-        sender.sender_ymotor(),
-        false,
-        btf.e3Abstand.u2
+        sender.sender_ymotor()
         )
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
