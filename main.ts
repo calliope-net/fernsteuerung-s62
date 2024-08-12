@@ -14,11 +14,11 @@ function modell_Callibot () {
         255,
         16,
         64,
-        8,
+        0,
         cb2.cb2_zehntelsekunden(btf.ePause.s1),
-        btf.e3Abstand.u2
+        btf.e3Abstand.u0
         )
-        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonA_Switch())
     } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
