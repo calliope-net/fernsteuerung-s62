@@ -9,16 +9,15 @@ function modell_Callibot () {
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
     } else if (sender.isFunktion(sender.eFunktion._10fernstarten)) {
-        sender.send10Spurfolger(
+        sender.send10AbstandAusweichen(
         btf.btf_sendBuffer19(),
-        192,
-        160,
-        31,
-        0,
-        sender.sender_ButtonA_Switch(),
+        255,
+        16,
+        64,
+        8,
+        cb2.cb2_zehntelsekunden(btf.ePause.s1),
         btf.e3Abstand.u2
         )
-        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
     } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
@@ -91,6 +90,18 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     sender.buttonAB()
 })
+function callibot_spurfolger () {
+    sender.send10Spurfolger(
+    btf.btf_sendBuffer19(),
+    192,
+    160,
+    31,
+    0,
+    sender.sender_ButtonA_Switch(),
+    btf.e3Abstand.u2
+    )
+    btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
+}
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     sender.buttonB()
 })
