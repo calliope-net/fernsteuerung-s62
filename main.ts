@@ -18,7 +18,7 @@ function modell_Callibot () {
         cb2.cb2_zehntelsekunden(btf.ePause.s1),
         btf.e3Abstand.u0
         )
-        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
@@ -41,6 +41,17 @@ function modell_Callibot () {
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.ma, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan)) {
         btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
+    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenSpurfolger)) {
+        sender.send10Spurfolger(
+        btf.btf_sendBuffer19(),
+        192,
+        160,
+        31,
+        0,
+        !(sender.sender_ButtonA_Switch()),
+        btf.e3Abstand.u2
+        )
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
 }
@@ -91,16 +102,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     sender.buttonAB()
 })
 function callibot_spurfolger () {
-    sender.send10Spurfolger(
-    btf.btf_sendBuffer19(),
-    192,
-    160,
-    31,
-    0,
-    sender.sender_ButtonA_Switch(),
-    btf.e3Abstand.u2
-    )
-    btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
+	
 }
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     sender.buttonB()
