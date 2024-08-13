@@ -8,7 +8,7 @@ function modell_Callibot () {
         btf.e3Abstand.u2
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion._10fernstarten)) {
+    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenAbstand)) {
         sender.send10AbstandAusweichen(
         btf.btf_sendBuffer19(),
         255,
@@ -19,7 +19,7 @@ function modell_Callibot () {
         btf.e3Abstand.u0
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonA_Switch()) {
+    } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
         sender.sender_Strecke(192, 31, 30),
@@ -31,7 +31,7 @@ function modell_Callibot () {
         )
         btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
-    } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonB_Switch()) {
+    } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonB_Switch()) {
         sender.send2x2Motoren(
         btf.btf_sendBuffer19(),
         sender.sender_2MotorenEncoder(240, 240, 30, 30),
@@ -39,7 +39,7 @@ function modell_Callibot () {
         8
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.ma, true)
-    } else if (sender.isFunktion(sender.eFunktion._20fahrplan)) {
+    } else if (sender.isFunktion(sender.eFunktion.f20fahrplan)) {
         btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
@@ -118,7 +118,7 @@ function modell_MKC_Sensoren () {
         btf.e3Abstand.u3
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion._10fernstarten)) {
+    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenSpurfolger)) {
         sender.send10Spurfolger(
         btf.btf_sendBuffer19(),
         192,
@@ -130,7 +130,7 @@ function modell_MKC_Sensoren () {
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion._20fahrplan) && sender.sender_ButtonA_Switch()) {
+    } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
         sender.sender_Strecke(192, 29, 40),
@@ -142,7 +142,7 @@ function modell_MKC_Sensoren () {
         )
         btf.setAbstand(btf.btf_sendBuffer19(), btf.e3Abstand.u2)
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
-    } else if (sender.isFunktion(sender.eFunktion._20fahrplan)) {
+    } else if (sender.isFunktion(sender.eFunktion.f20fahrplan)) {
         btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
