@@ -101,9 +101,6 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     sender.buttonAB()
 })
-function callibot_spurfolger () {
-	
-}
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     sender.buttonB()
 })
