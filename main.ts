@@ -49,7 +49,8 @@ function modell_Callibot () {
         31,
         0,
         !(sender.sender_ButtonA_Switch()),
-        btf.e3Abstand.u2
+        btf.e3Abstand.u2,
+        sender.sender_zehntelsekunden(btf.ePause.s1)
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
     }
@@ -125,7 +126,8 @@ function modell_MKC_Sensoren () {
         31,
         0,
         sender.sender_ButtonA_Switch(),
-        btf.e3Abstand.u2
+        btf.e3Abstand.u2,
+        sender.sender_zehntelsekunden(btf.ePause.s1)
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
