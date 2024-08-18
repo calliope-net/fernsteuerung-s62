@@ -126,7 +126,7 @@ function modell_MKC_Sensoren () {
         64,
         0,
         sender.sender_zehntelsekunden(btf.ePause.s1),
-        btf.e3Abstand.u2
+        btf.e3Abstand.u3
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
