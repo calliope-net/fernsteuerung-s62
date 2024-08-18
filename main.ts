@@ -115,22 +115,20 @@ function modell_MKC_Sensoren () {
         sender.sender_xmotor(),
         sender.sender_servo16(),
         sender.sender_ButtonA_Switch(),
-        btf.e3Abstand.u3
+        btf.e3Abstand.u2
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
-    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenSpurfolger)) {
-        sender.send10Spurfolger(
+    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenAbstand)) {
+        sender.send10AbstandAusweichen(
         btf.btf_sendBuffer19(),
-        192,
-        160,
-        31,
+        255,
+        16,
+        64,
         0,
-        sender.sender_ButtonA_Switch(),
-        btf.e3Abstand.u2,
-        sender.sender_zehntelsekunden(btf.ePause.s1)
+        sender.sender_zehntelsekunden(btf.ePause.s1),
+        btf.e3Abstand.u2
         )
-        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
-        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, sender.sender_ButtonB_Switch())
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
         sender.send20Strecken(
         btf.btf_sendBuffer19(),
@@ -145,6 +143,18 @@ function modell_MKC_Sensoren () {
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.m1, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan)) {
         btf.setBetriebsart(btf.btf_sendBuffer19(), btf.e0Betriebsart.p2Fahrplan)
+    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenSpurfolger)) {
+        sender.send10Spurfolger(
+        btf.btf_sendBuffer19(),
+        192,
+        160,
+        31,
+        0,
+        !(sender.sender_ButtonA_Switch()),
+        btf.e3Abstand.u2,
+        sender.sender_zehntelsekunden(btf.ePause.s1)
+        )
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
     }
     btf.setSchalter(btf.btf_sendBuffer19(), btf.e0Schalter.b0, sender.joystickButtonPosition())
 }
