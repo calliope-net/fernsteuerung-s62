@@ -108,6 +108,11 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonBhold()
 })
+function Konfiguration () {
+    btf.comment(btf.btf_text("GitHub: calliope-net/fernsteuerung-s62"))
+    btf.comment(btf.btf_text("Erweiterung: calliope-net/fernsteuerung"))
+    btf.comment(btf.btf_text(",\"yotta\":{\"config\":{\"microbit-dal\":{\"bluetooth\":{\"pairing_mode\":1,\"partial_flashing\":0}}}}"))
+}
 function modell_MKC_Sensoren () {
     if (sender.isFunktion(sender.eFunktion.m0_s0)) {
         sender.send00M0Joystick(
