@@ -16,7 +16,7 @@ function modell_Callibot () {
         64,
         0,
         cb2.cb2_zehntelsekunden(btf.ePause.s1),
-        btf.e3Abstand.u3
+        btf.e3Abstand.u2
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
