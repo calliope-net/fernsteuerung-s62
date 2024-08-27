@@ -5,7 +5,7 @@ function modell_Callibot () {
         sender.sender_xmotor(),
         sender.sender_servo16(),
         sender.sender_ButtonA_Switch(),
-        btf.e3Abstand.u2
+        btf.e3Abstand.u0
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
     } else if (sender.isFunktion(sender.eFunktion.f10fernstartenAbstand)) {
@@ -16,7 +16,7 @@ function modell_Callibot () {
         64,
         0,
         cb2.cb2_zehntelsekunden(btf.ePause.s1),
-        btf.e3Abstand.u0
+        btf.e3Abstand.u3
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.md, true)
     } else if (sender.isFunktion(sender.eFunktion.f20fahrplan) && sender.sender_ButtonA_Switch()) {
@@ -49,7 +49,7 @@ function modell_Callibot () {
         31,
         0,
         !(sender.sender_ButtonA_Switch()),
-        btf.e3Abstand.u2,
+        btf.e3Abstand.u0,
         sender.sender_zehntelsekunden(btf.ePause.s1)
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
@@ -63,7 +63,7 @@ function modell_MKC_Gabelstapler () {
         sender.sender_xmotor(),
         sender.sender_servo16(),
         sender.sender_ButtonA_Switch(),
-        btf.e3Abstand.u3
+        btf.e3Abstand.u1
         )
         btf.setSensor(btf.btf_sendBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b5Spur, sender.sender_ButtonB_Switch())
     } else if (sender.isFunktion(sender.eFunktion.m0_m1_s0)) {
@@ -86,7 +86,7 @@ function modell_MKC_Kran () {
         sender.sender_xmotor(),
         sender.sender_servo16(),
         false,
-        btf.e3Abstand.u3
+        btf.e3Abstand.u1
         )
     } else if (sender.isFunktion(sender.eFunktion.ma_mb)) {
         sender.send00MABKran(btf.btf_sendBuffer19(), sender.sender_xmotor(), sender.sender_ymotor())
@@ -156,7 +156,7 @@ function modell_MKC_Sensoren () {
         31,
         0,
         sender.sender_ButtonA_Switch(),
-        btf.e3Abstand.u2,
+        btf.e3Abstand.u1,
         sender.sender_zehntelsekunden(btf.ePause.s1)
         )
         btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
