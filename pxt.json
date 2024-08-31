@@ -1,5 +1,5 @@
 {
-    "name": "fernsteuerung-s62",
+    "name": "fernsteuerung-s61",
     "version": "1.4.4",
     "description": "",
     "dependencies": {
@@ -22,5 +22,5 @@
     "supportedTargets": [
         "calliopemini"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
